@@ -10,7 +10,7 @@ def execute(filters=None):
 	columns = get_columns()
 	data = []
 
-	data = frappe.get_all(
+	data = frappe.db.get_all(
 		"Project",
 		filters=filters,
 		fields=[
