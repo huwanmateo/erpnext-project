@@ -24,7 +24,7 @@ def execute(filters=None):
 		],
 		order_by="expected_end_date",
 	)
-
+	frappe.throw(_(str(data)))
 	for project in data:
 		project["total_tasks"] = frappe.db.count("Task", filters={"project": project.name})
 		project["completed_tasks"] = frappe.db.count(
